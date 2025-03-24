@@ -12,9 +12,12 @@ import org.hibernate.SessionFactory;
  */
 public class HibernateUtil {
     private static final SessionFactory sessionFactory = buildSessionFactory();
+    
     private static SessionFactory buildSessionFactory(){
         try {
-            return new Configuration().configure().buildSessionFactory();
+            Configuration config = new Configuration();
+            config.configure("hibernate.cfg.xml");
+            return  config.buildSessionFactory();
         } catch (HibernateException ex) {
             System.err.println("SessionFactory creation failed" + ex);
             throw new ExceptionInInitializerError(ex);

@@ -20,7 +20,7 @@ public class DAPP02Practica03 {
         Transaction transaction = session.beginTransaction();
         
         EmpleadoPojo pojo = new EmpleadoPojo();
-        long id =1;
+        long id =2;
         pojo.setId(id);
         pojo.setName("gonzalo");
         pojo.setAddress("telas poncho");
@@ -29,10 +29,6 @@ public class DAPP02Practica03 {
         System.out.println(  pojo.getName()); 
         
         session.save(pojo);
-      
-      
-        
-
-
+     
     }
 }

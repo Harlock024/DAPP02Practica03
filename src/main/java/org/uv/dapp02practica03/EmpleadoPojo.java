@@ -1,15 +1,18 @@
 package org.uv.dapp02practica03;
 
 import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
  *
  * @author harlock024
  */
+@Entity
 @Table(name = "empleados")
 public class EmpleadoPojo implements Serializable{
-    
+    @Id
     private Long id;
     private String name;
     private String address;
