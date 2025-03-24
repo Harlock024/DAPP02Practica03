@@ -26,9 +26,11 @@ public class DAPP02Practica03 {
         pojo.setAddress("telas poncho");
         pojo.setPhone("1234213123");
         
-        System.out.println(  pojo.getName()); 
+        System.out.println(pojo.getName()); 
         
         session.save(pojo);
+        transaction.commit();
+        System.out.println("empleado guardado");
      
     }
 }
