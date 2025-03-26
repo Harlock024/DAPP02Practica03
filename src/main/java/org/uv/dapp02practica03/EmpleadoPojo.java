@@ -1,8 +1,12 @@
 package org.uv.dapp02practica03;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -13,6 +17,10 @@ import javax.persistence.Table;
 @Table(name = "empleados")
 public class EmpleadoPojo implements Serializable{
     @Id
+    @Column
+    @GeneratedValue(generator = "empleados_id_seq",strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "empleados_id_seq",
+            sequenceName = "empleados_id_seq",initialValue = 1,allocationSize = 1)
     private Long id;
     private String name;
     private String address;

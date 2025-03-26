@@ -15,21 +15,24 @@ import org.hibernate.Transaction;
 public class DAPP02Practica03 {
 
     public static void main(String[] args) {
-    SessionFactory sf = HibernateUtil.getSessionFactory();
-        Session  session = sf.getCurrentSession();
-        Transaction transaction = session.beginTransaction();
+//    SessionFactory sf = HibernateUtil.getSessionFactory();
+//        Session  session = sf.getCurrentSession();
+//        Transaction transaction = session.beginTransaction();
         
         EmpleadoPojo pojo = new EmpleadoPojo();
-        long id =2;
-        pojo.setId(id);
-        pojo.setName("gonzalo");
-        pojo.setAddress("telas poncho");
+        EmpleadoDAO dao = new EmpleadoDAO();
+    
+   
+        pojo.setName("hadith024");
+        pojo.setAddress("col");
         pojo.setPhone("1234213123");
         
-        System.out.println(pojo.getName()); 
+        dao.create(pojo);
         
-        session.save(pojo);
-        transaction.commit();
+//        System.out.println(pojo.getName()); 
+//        
+//        session.save(pojo);
+//        transaction.commit();
         System.out.println("empleado guardado");
      
     }
