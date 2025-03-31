@@ -1,13 +1,11 @@
-
 package org.uv.dapp02practica03;
 
 import java.util.List;
 import java.util.Scanner;
 import org.uv.dapp02practica03.EmpleadoDAO;
 
-
-
 public class DAPP02Practica03 {
+
     private static final EmpleadoDAO empleadoDAO = new EmpleadoDAO();
     private static final Scanner scanner = new Scanner(System.in);
 
@@ -26,16 +24,22 @@ public class DAPP02Practica03 {
             scanner.nextLine();
 
             switch (opcion) {
-                case 1 -> crearEmpleado();
-                case 2 -> actualizarEmpleado();
-                case 3 -> eliminarEmpleado();
-                case 4 -> buscarEmpleadoPorId();
-                case 5 -> listarEmpleados();
+                case 1 ->
+                    crearEmpleado();
+                case 2 ->
+                    actualizarEmpleado();
+                case 3 ->
+                    eliminarEmpleado();
+                case 4 ->
+                    buscarEmpleadoPorId();
+                case 5 ->
+                    listarEmpleados();
                 case 6 -> {
                     System.out.println("Saliendo...");
                     return;
                 }
-                default -> System.out.println("Opción inválida, intente de nuevo.");
+                default ->
+                    System.out.println("Opción inválida, intente de nuevo.");
             }
         }
     }
@@ -87,7 +91,9 @@ public class DAPP02Practica03 {
         Long id = scanner.nextLong();
         EmpleadoPojo empleado = empleadoDAO.fetch_by_id(id);
         if (empleado != null) {
-            System.out.println("Empleado encontrado: " + empleado);
+            System.out.println("Empleado encontrado:");
+            System.out.println("id " + empleado.getId() + "\nName " + empleado.getName());
+
         } else {
             System.out.println("Empleado no encontrado.");
         }
@@ -99,8 +105,10 @@ public class DAPP02Practica03 {
             System.out.println("No hay empleados registrados.");
         } else {
             for (EmpleadoPojo empleado : empleados) {
-                System.out.println("id "+ empleado.getId()+ "\nName"+empleado.getName());
-                
+                System.out.println("---------------------------------------");
+                System.out.println("id " + empleado.getId() + "\nName " + empleado.getName());
+               
+
             }
         }
     }
